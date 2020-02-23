@@ -80,11 +80,15 @@ typedef union {
 void die(const char *, ...);
 void redraw(void);
 void draw(void);
+void kscrolldown(const Arg *);
+void kscrollup(const Arg *);
 
+void externalpipe(const Arg *);
 void printscreen(const Arg *);
 void printsel(const Arg *);
 void sendbreak(const Arg *);
 void toggleprinter(const Arg *);
+void copyurl(const Arg *);
 
 int tattrset(int);
 void tnew(int, int);
@@ -112,6 +116,7 @@ void *xrealloc(void *, size_t);
 char *xstrdup(char *);
 
 /* config.h globals */
+extern char *externalpipe_sigusr1[];
 extern char *utmp;
 extern char *stty_args;
 extern char *vtiden;
